@@ -3,7 +3,16 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
 
 ## 1일차
 - Spring Boot 개요
-    - 
+    - 개발 환경, 개발 난이도를 낮추는 작업
+    - Servlet > EJB > JSP > Spring > SpringBoot
+    - 장점
+        - Spring의 기술을 그대로 사용 가능(migration 간단)
+        - JPA를 사용하면 ERD나 DB 설계를 하지 않고도 손쉽게 DB 생성 가능
+        - Tomcat Webserver가 내장(따로 설치 필요 없음)
+        - 서포트 기능 다수 존재(개발 쉽게 도와줌)
+        - JUnit 테스트, Log4J2 로그도 모두 포함
+        - JSP, **Thymeleaf**, Mustache 등 편하게 사용 가능
+        - DB 연동이 쉬움
 
 - Spring Boot 개발환경 설정
     - Java JDK 확인(17 이상 사용)
@@ -45,8 +54,8 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
             - JDK 17... 에러 메시지
             - Java JDK 잘못된 설치: x86(32bit) x64bit 혼용 설치
             - eclipse adoptium jdk 17 새로 설치, 시스템 환경설정
-            - build.gradle SpringBoot Framework 버전을 다운 3.3.0 -> 3.1.5
             - VS Code 재시작
+            - build.gradle SpringBoot Framework 버전을 다운 3.3.0 -> 3.1.5
 
     - 프로젝트 생성 후
         - /build.gradle 확인
@@ -54,3 +63,27 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - src/java/groupid/arifactid/Java 소스 파일 위치, 작업
         - src/main.resources/ 프로젝트 설정 파일, 웹 리소스 파일(css, js, html, jsp 등)
         - Spring01Application.java Run | Debug 메뉴
+        - Gradle build
+            - 터미널에서 .\gradlew.bat 실행
+            - Gradle for java 설치한 경우
+                - Gradle 아이콘(코끼리) > Tasks > build > build play icon(Run task) 실행
+        - Spring Boot Dashboard
+            - Apps > Spring01 Run | Debug 중에서 하나 아이콘 클릭해서 서버 실행
+            - 디버그로 실행해야 Hot code replace가 동작
+        - 브라우저 변경 설정
+            - 설정(Ctrl + ,) > browser > Spring > Dashboard Open With 'Internal' -> 'external'로 변경
+            - Chrome을 기본 브라우저로 사용 추천
+
+
+## 2일차
+- Oracle 도커로 설치
+    - 설치되어 있는 Oracle 삭제
+- Database 설정
+    - H2 DB - Spring Boot에서 손쉽게 사용한 내장된 Inmemory DB, Oracle, MySQL, SQLServer와 쉽게 호환됨
+    - Oracle - 운영 시 사용할 DB
+    - MySQL - Optional 설명할 DB
+    - Oracle PKNUSB / pknu_p@ss로 생성
+        - 콘솔
+        ```shell
+        > sqlplus system/password
+        ```
