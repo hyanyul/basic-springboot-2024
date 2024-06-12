@@ -13,6 +13,9 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - JUnit 테스트, Log4J2 로그도 모두 포함
         - JSP, **Thymeleaf**, Mustache 등 편하게 사용 가능
         - DB 연동이 쉬움
+    
+    - MVC
+        <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp002.png?raw=true" width="730">
 
 - Spring Boot 개발환경 설정
     - Java JDK 확인(17 이상 사용)
@@ -70,6 +73,9 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - Spring Boot Dashboard
             - Apps > Spring01 Run | Debug 중에서 하나 아이콘 클릭해서 서버 실행
             - 디버그로 실행해야 Hot code replace가 동작
+
+                <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp001.png?raw=true" width="350">
+
         - 브라우저 변경 설정
             - 설정(Ctrl + ,) > browser > Spring > Dashboard Open With 'Internal' -> 'external'로 변경
             - Chrome을 기본 브라우저로 사용 추천
@@ -78,6 +84,7 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
 ## 2일차
 - Oracle 도커로 설치
     - 설치되어 있는 Oracle 삭제
+    
 - Database 설정
     - H2 DB - Spring Boot에서 손쉽게 사용한 내장된 Inmemory DB, Oracle, MySQL, SQLServer와 쉽게 호환됨
     - Oracle - 운영 시 사용할 DB
