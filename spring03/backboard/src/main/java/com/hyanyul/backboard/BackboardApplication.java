@@ -1,13 +1,13 @@
-package com.hyanyul.spring02;
+package com.hyanyul.backboard;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Spring02Application {
+public class BackboardApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Spring02Application.class, args);
+		SpringApplication.run(BackboardApplication.class, args);
 	}
 
 }

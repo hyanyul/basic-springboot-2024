@@ -111,7 +111,7 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
 
     - oracle system 사용자 비번 oracle로 설정
     ```shell
-    bash-4.4$ .setPassword.sh oracle
+    bash-4.4$ ./setPassword.sh oracle
     ```
 
     - Oracle 접속 확인
@@ -166,7 +166,7 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
     ## Oracle 설정
     spring.datasource.username=pknusb
     spring.datasource.password=pknu_p@ss
-    spring.datasource.url=jdbc:oracle:thin@localhost:11521:FREE
+    spring.datasource.url=jdbc:oracle:thin:@localhost:11521:FREE
     spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
 
     ## MyBatis 설정
@@ -178,3 +178,37 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
     - MyBatis 적용
         - SpringBoot 이전 resource/WEP-INF 위치에 root-context.xml에 DB, MyBatis 설정
         - SpringBoot 이후 application.properties + Config.java로 변경
+
+## 4일차
+- Spring Boot JPA + Oracle + Thymeleaf + React
+    - JPA -> DB 설계를 하지 않고 엔티티 클래스를 DB로 자동생성해주는 기술, Query로 만들 필요 없음
+    - H2 -> Oracle, MySQL, SQLServer 등과 달리 Inmemory DB, 스프링부트 실행되면 같이 실행되는 DB
+            개발 편의성, 다른 DB로 전환 시 아주 편리, 개발하는 동안 사용 추천
+    - Thymeleaf -> JSP의 단점 복잡한 템플릿 형태 + 스파게티 코드 해소(간결화, 완전히 없어진 건 아님)해주는 템플릿
+    - Bootstrap -> 웹디자인 및 CSS의 혁신, 커스터마이징 가능
+    - 소셜로그인 -> 구글, 카카오, 네이버 등 소셜로 로그인할 수 있는 기능
+    - React -> 프론트엔드 분리, 백엔드 서버와 프론트엔드 서버 따로 관리(통합 가능)
+
+- Spring Boot JPA 프로젝트 생성
+    - 명령 팔레트로 시작, Spring Initialzr: Create a Gradle Project...
+    - Specify Spring Boot Version -> 3.2.6
+    - Specify project language -> java
+    - Input Group Id -> com.hyanyul
+    - Artifact Id -> backboard
+    - packaging type -> Jar
+    - Java version -> 17
+    - Dependency
+        1. Spring Boot DevTools
+        2. Lombok
+        3. Spring Web
+        4. Thymeleaf
+        5. Oracle Driver(later)
+        6. H2 Database(later)
+        7. Data JPA(later)
+    - Spring03 폴더 내에서 **Generate into this folder**
+
+- Spring Boot JPA 프로젝트 개발 시작
+    1. build.gradle dependency 확인
+    2. application.properties 기본 설정 입력(포트 번호, 로그 색상, 자동 재빌드, 로그 레벨)
+    3. 각 기능별로 폴더를 생성(controller, service, entity, ...)
+    4. /controller/MainContoller.java 생성, 기본 메소드 구현

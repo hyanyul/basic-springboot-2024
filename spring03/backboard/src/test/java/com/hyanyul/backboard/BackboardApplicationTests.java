@@ -1,10 +1,10 @@
-package com.hyanyul.spring02;
+package com.hyanyul.backboard;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Spring02ApplicationTests {
+class BackboardApplicationTests {
 
 	@Test
 	void contextLoads() {

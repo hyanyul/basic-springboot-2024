@@ -9,7 +9,7 @@
              , DUEDATE
              , WRITER
              , ISDONE
-          FROM TODOS;
+          FROM TODOS
     </select>
 
     <select>
