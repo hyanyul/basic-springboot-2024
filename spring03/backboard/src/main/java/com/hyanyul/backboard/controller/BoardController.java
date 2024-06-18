@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 @RequiredArgsConstructor
 public class BoardController {
-     private final BoardService boardService;
+    private final BoardService boardService;
 
     //  @RequestMapping("/list", method=RequestMethod.GET)  // 아래와 동일 기능
     @GetMapping("/list")
