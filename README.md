@@ -276,8 +276,8 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - bootstrap.min.css, bootstrap.min.js를 templates/static에 위치
     12. /templates/board/list.html, detail.html 부트스트랩 적용
 
-        <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp003.png?raw=true" width="730">
-        
+        <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp004.png?raw=true" width="730">
+
 
 ## 6일차
 - Spring Boot JPA 프로젝트 개발 계속
@@ -298,6 +298,10 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
     15. 댓글 등록에도 반영. ReplyForm, ReplyController, detail.html 작업
     16. detail.html 경고 영역 div는 create.html 복사해서 그대로 사용
     17. (문제) 각 입력창에 공백을 넣었을 때 입력되는 문제 @NotEmpty는 스페이스를 허용 -> @NotBlank로 변경
+
+        <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp005.png?raw=true" width="730">
+
+
     18. 네비게이션바(navbar) 추가
     19. 테스트로 대량 데이터 추가
 
