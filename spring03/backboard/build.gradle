@@ -35,10 +35,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-
 	// DB(H2, Oracle, JPA)
 	runtimeOnly 'com.h2database:h2'
-//    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 	// Thymeleaf 레이아웃 적용
@@ -46,6 +45,10 @@ dependencies {
 
 	// 입력값 검증
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// 스프링 시큐리티
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 }
 
 tasks.named('test') {

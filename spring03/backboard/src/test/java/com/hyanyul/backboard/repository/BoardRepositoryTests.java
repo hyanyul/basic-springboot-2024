@@ -25,7 +25,7 @@ public class BoardRepositoryTests {
 
      @Test
      void testHugeBoards(){
-        for(int i=1; i<=300; i++){
+        for(int i=1; i<=400; i++){
             this.boardService.setBoard(String.format("테스트 데이터 - [%03d]", i), 
                                        "내용 없음");
         }

@@ -10,13 +10,13 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class MainController {
     @GetMapping("/hello")
-    public String getHello() {
+    public String hello() {
         log.info("getHello(); 실행");
         return "hello";
     }
 
     @GetMapping("/")
-    public String getMain() {
+    public String main() {
         return "redirect:/board/list";  // localhost:8080 -> localhost:/8080/board/list 변경
     }
     

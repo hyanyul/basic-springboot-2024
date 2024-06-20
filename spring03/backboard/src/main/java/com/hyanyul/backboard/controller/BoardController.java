@@ -1,11 +1,11 @@
 package com.hyanyul.backboard.controller;
 
-import java.util.List;
-
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hyanyul.backboard.entity.Board;
 import com.hyanyul.backboard.service.BoardService;
@@ -28,9 +28,15 @@ public class BoardController {
 
     //  @RequestMapping("/list", method=RequestMethod.GET)  // 아래와 동일 기능
     @GetMapping("/list")
-    public String list(Model model) {   // Model -> controller에 있는 객체를 View로 보내주는 역할을 하는 객체
-        List<Board> boardList = this.boardService.getList();
-        model.addAttribute("boardList", boardList); // thymeleaf, mustache, jsp 등을 view로 보내는 기능
+    public String list(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {   // Model -> controller에 있는 객체를 View로 보내주는 역할을 하는 객체
+        // List<Board> boardList = this.boardService.getList();
+        // model.addAttribute("boardList", boardList); // thymeleaf, mustache, jsp 등을 view로 보내는 기능
+
+        page = page - 1;
+
+        Page<Board> paging = this.boardService.getList(page);
+        model.addAttribute("paging", paging);// 페이징된 보드를 view로 전달
+
         return "board/list";    // templates/board/list.html 렌더링해서 리턴하라
     }     
 

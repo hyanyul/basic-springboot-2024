@@ -1,9 +1,14 @@
 package com.hyanyul.backboard.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.hyanyul.backboard.entity.Board;
@@ -20,8 +25,16 @@ public class BoardService {
         return this.boardRepository.findAll();
     }
 
+    // 페이징되는 리스트 메서드
+    public Page<Board> getList(int page){
+        List<Sort.Order> sorts = new ArrayList<>();
+        sorts.add(Sort.Order.desc("createDate"));
+        Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
+        return this.boardRepository.findAll(pageable);
+    }
+
     public Board getBoard(Long bno) throws Exception{
-        Optional<Board> board = this.boardRepository.findById(bno);
+        Optional<Board> board = this.boardRepository.findByBno(bno);
 
         if(board.isPresent()){  // 데이터가 존재하면
             return board.get();
