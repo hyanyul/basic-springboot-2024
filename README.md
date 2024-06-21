@@ -342,3 +342,25 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - /entity/Member.java 생성
         - /repository/MemberRepository.java 인터페이스 생성
         - /service/MemberService.java 생성, setMember() 메서드 작성
+
+## 8일차
+- Spring Boot JPA 프로젝트 개발 계속
+    1. 스프링 시큐리티 계속
+        - /security/SecurityConfig.java에 BCryptPasswordEncoder를 Bean으로 작업
+        - /validation/MemberForm.java 생성
+        - /controller/MemberController.java 생성
+        - /entity/Member.java에 regDate 추가
+        - /service/MemberService.java regDate() 부분 추가 작성
+        - /templates/member/register.html 생성
+        - (설정) Member 테이블에 저장된 회원정보 확인
+        - /templates/layout.html 회원가입 링크 추가
+        - /controller/MemberController.java PostMapping register에 중복회원가입 방지 추가
+        - /security/MemberRole.java enum으로 ROLE_ADMIN, ROLE_USER 생성
+        - /entity/Member.java role 변수 추가
+    
+    2. 로그인 기능
+        - /security/SecurityConfig.java에 login url 설정
+        - /templates/member/login.html 생성
+        - /repository/MemberController.java find* 메서드 추가
+        - /controller/MemberController.java login Get 메서드 작성
+        - /service/MemberSercurityService.java - 로그인은 post를 사용하지 않고, Spring Security가 지원하는 UserDetailsService 인터페이스 활용

@@ -8,3 +8,8 @@ a:hover{
     color: black;
     font-weight: 500;
 }
+
+.form-register{
+    max-width: 330px;
+    padding: 1rem;
+}
