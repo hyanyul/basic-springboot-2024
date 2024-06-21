@@ -357,6 +357,9 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - /controller/MemberController.java PostMapping register에 중복회원가입 방지 추가
         - /security/MemberRole.java enum으로 ROLE_ADMIN, ROLE_USER 생성
         - /entity/Member.java role 변수 추가
+       
+            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp007.png?raw=true" width="730">
+    
     
     2. 로그인 기능
         - /security/SecurityConfig.java에 login url 설정
@@ -383,7 +386,6 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - /templates/board/list.html table 태그에 작성자 컬럼 추가
         - /templates/board/detail.html 게시글 작성자, 댓글 작성자 표시 추가
 
-            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp007.png?raw=true" width="730">
 
 
 ## 9일차
