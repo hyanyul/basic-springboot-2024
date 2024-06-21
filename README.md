@@ -383,6 +383,9 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - /templates/board/list.html table 태그에 작성자 컬럼 추가
         - /templates/board/detail.html 게시글 작성자, 댓글 작성자 표시 추가
 
+            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp007.png?raw=true" width="730">
+
+
 ## 9일차
 - Spring Boot JPA 프로젝트 개발 계속
     - 수정, 삭제
