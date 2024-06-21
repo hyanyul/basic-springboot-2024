@@ -11,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,6 +41,10 @@ public class Board {
     @CreatedDate
     @Column(name = "createDate", updatable = false)
     private LocalDateTime createDate;   // 글 생성일
+
+    // 사용자가 여러개의 게시글 작성 가능, 다대일 설정
+    @ManyToOne
+    private Member writer;
 
     // 중요, Relationship 1:n
     @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE)

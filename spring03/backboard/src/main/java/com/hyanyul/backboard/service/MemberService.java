@@ -1,10 +1,12 @@
 package com.hyanyul.backboard.service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.hyanyul.backboard.common.NotFoundException;
 import com.hyanyul.backboard.entity.Member;
 import com.hyanyul.backboard.repository.MemberRepository;
 import com.hyanyul.backboard.security.MemberRole;
@@ -30,5 +32,14 @@ public class MemberService {
         this.memberRepository.save(member);
 
         return member;
+    }
+
+    public Member getMember(String username){
+        Optional<Member> member = this.memberRepository.findByUsername(username);
+        if(member.isPresent()){
+            return member.get();
+        } else{
+            throw new NotFoundException("Member not found");
+        }
     }
 }

@@ -361,6 +361,44 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
     2. 로그인 기능
         - /security/SecurityConfig.java에 login url 설정
         - /templates/member/login.html 생성
-        - /repository/MemberController.java find* 메서드 추가
+        - /repository/MemberRepository.java find* 메서드 추가
         - /controller/MemberController.java login Get 메서드 작성
         - /service/MemberSercurityService.java - 로그인은 post를 사용하지 않고, Spring Security가 지원하는 UserDetailsService 인터페이스 활용
+        - /security/SecurityConfig.java 계정 관리자 Bean 추가
+        - /templates/layout.html 로그인/로그아웃 토글 메뉴 추가
+    
+    3. 게시글 작성자 추가
+        - /entity/Board.java, /entity/Reply.java에 작성자 변수(속성) 추가
+        - /service/MemberService.java에 getMember() 메서드 정의
+        - (Tip) default Exception으로 예외를 처리하면 메서드 뒤에 항상 throws Exception을 적어줘야 함.
+        - /common/NotFoundException.java 생성 -> throws Exception 쓰는데 반영
+        - /service/ReplyService.java setReply() 사용자 추가
+        - /controller/ReplyController.java 오류나는 setReply() 파라미터 수정
+        - /service/BoardService.java .. 
+        - /controller/BoardController.java setBoard() 사용자 추가
+        - /controller/ 작성하는 Get/Post 메서드에 @PreAuthorize 어노테이션 추가
+        - /config/SecurityConfig.java @PreAuthorize 동작하도록 설정 추가
+        - /templates/board/detail.html 답변 textarea 로그인 전/후로 구분
+
+        - /templates/board/list.html table 태그에 작성자 컬럼 추가
+        - /templates/board/detail.html 게시글 작성자, 댓글 작성자 표시 추가
+
+## 9일차
+- Spring Boot JPA 프로젝트 개발 계속
+    - 수정, 삭제
+    - 앵커 기능
+    - 마크다운 적용, 마크다운 에디터 추가
+    - 검색 기능
+    - 카테고리 추가(게시판, QnA, 공지사항)
+    - 비밀번호 찾기, 비밀번호 변경
+    - 조회수
+
+    - 리액트 적용
+    - 리액트로 프론트엔드 설정
+    - thymeleaf - 리액트로 변경
+    - Spring boot Rest API 작업
+
+    - AWS 라이트 세일
+    - 서버 접속 프로그램 설정
+    - 웹서버 배포
+    - 8080 -> 80 서버

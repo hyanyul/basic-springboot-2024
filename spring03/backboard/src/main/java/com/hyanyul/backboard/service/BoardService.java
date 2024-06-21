@@ -11,7 +11,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.hyanyul.backboard.common.NotFoundException;
 import com.hyanyul.backboard.entity.Board;
+import com.hyanyul.backboard.entity.Member;
 import com.hyanyul.backboard.repository.BoardRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -33,20 +35,24 @@ public class BoardService {
         return this.boardRepository.findAll(pageable);
     }
 
-    public Board getBoard(Long bno) throws Exception{
+    public Board getBoard(Long bno){
         Optional<Board> board = this.boardRepository.findByBno(bno);
 
         if(board.isPresent()){  // 데이터가 존재하면
             return board.get();
         } else{
-            throw new Exception("board not found");
+            throw new NotFoundException("board not found");
         }
         
     }
 
-    public void setBoard(String title, String content){
+    // 24.06.18. setBoard 작성(hyanyul)
+    // 24.06.21. Member 추가
+    public void setBoard(String title, String content, Member writer){
         // 빌더로 생성한 객체
         Board board = Board.builder().title(title).content(content).createDate(LocalDateTime.now()).build();
+
+        board.setWriter(writer);
 
         this.boardRepository.save(board);
     }

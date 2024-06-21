@@ -34,9 +34,13 @@ public class Reply {
     @CreatedDate
     @Column(name = "createDate", updatable = false)
     private LocalDateTime createDate;
-
+    
     // 중요, ERD로 DB 설계하지 않고 엔티티 클래스로 관계 형성 시 반드시 사용해야 함
     // Relationship n:1
     @ManyToOne
     private Board board;
+
+    // 사용자가 여러개의 게시글 작성 가능, 다대일 설정
+    @ManyToOne
+    private Member writer;
 }
