@@ -1,5 +1,6 @@
 package com.hyanyul.backboard.repository;
 
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -25,4 +26,6 @@ public interface BoardRepository extends JpaRepository<Board, Long>{
     @SuppressWarnings("null")   // 경고 메세지 없애주는 어노테이션
     // select b1_0.bno,b1_0.content,b1_0.create_date,b1_0.title from board b1_0 offset 0 rows fetch first 10 rows only 쿼리 만들어서 실행
     Page<Board> findAll(Pageable pageable);
+
+    Page<Board> findAll(Specification<Board> spec, Pageable pageable);
 }
