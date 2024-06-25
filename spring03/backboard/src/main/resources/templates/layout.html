@@ -47,7 +47,26 @@
     </nav>
 
     <!-- 레이아웃에 적용될 하위 페이지 위치 -->
-    <th:block layout:fragment="main-content"></th:block>
+    <div class="container mt-3" style="height: auto !important;">
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-2 p-2">
+                <!-- 게시판 카테고리 영역 추가 -->
+                <nav class="border-top border-secondary">
+                    <div class="list-group">
+                        <a th:classappend="${category} == 'free' ? 'active'" th:href="@{/board/list/free}"
+                         class="category-group rounded-0 list-group-item list-group-item-action list-group-item-light p-2">자유게시판</a>
+                        <a th:classappend="${category} == 'qna' ? 'active'" th:href="@{/board/list/qna}"
+                         class="category-group rounded-0 list-group-item list-group-item-action list-group-item-light p-2">Q&A</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-10">
+                <!-- 기존 게시판 영역 -->
+                <th:block layout:fragment="main-content"></th:block>
+            </div>
+        </div>
+    </div>
+
     
     <!-- 부트스트랩 -->
     <!-- <script th:src="@{/bootstrap.min.js}"></script> -->
