@@ -49,9 +49,10 @@ public class BoardService {
         sorts.add(Sort.Order.desc("createDate"));
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
 
-        Specification<Board> spec = searchBoard(keyword);
+        // Specification<Board> spec = searchBoard(keyword);
+        // return this.boardRepository.findAll(spec, pageable); // Specification 인터페이스로 쿼리 생성 로직 만들어서 사용
 
-        return this.boardRepository.findAll(spec, pageable);
+        return this.boardRepository.findAllByKeyword(keyword, pageable);    // repository에서 쿼리 작성
     }
 
     public Board getBoard(Long bno){
