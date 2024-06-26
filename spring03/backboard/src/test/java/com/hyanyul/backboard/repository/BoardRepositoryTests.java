@@ -1,27 +1,27 @@
 package com.hyanyul.backboard.repository;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
+// import java.time.LocalDateTime;
+// import java.util.List;
+// import java.util.Optional;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hyanyul.backboard.entity.Board;
-import com.hyanyul.backboard.service.BoardService;
+// import com.hyanyul.backboard.entity.Board;
+// import com.hyanyul.backboard.service.BoardService;
 
 @SpringBootTest
 public class BoardRepositoryTests {
      // JUnit 테스트
-     @Autowired
-     private BoardRepository boardRepository;
+    //  @Autowired
+    //  private BoardRepository boardRepository;
 
-     @Autowired
-     private BoardService boardService;
+    //  @Autowired
+    //  private BoardService boardService;
 
     //  @Test
     //  void testHugeBoards(){

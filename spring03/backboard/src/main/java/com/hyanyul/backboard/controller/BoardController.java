@@ -60,7 +60,7 @@ public class BoardController {
     // }
 
     //  24.06.24. list 새로 변경
-    @GetMapping("/list")
+    // @GetMapping("/list")
     public String list(Model model,
                        @RequestParam(value = "page", defaultValue = "1") int page,
                        @RequestParam(value = "kw", defaultValue = "") String keyword) {
@@ -99,8 +99,10 @@ public class BoardController {
 
         String prevUrl = request.getHeader("referer");  // 이전 페이지 변수에 담기
         log.info(String.format("현재 이전 페이지: %s", prevUrl));
+    
+        // Board board = this.boardService.getBoard(bno);
+        Board board = this.boardService.hitBoard(bno);  // 조회수 증가하고 리턴
 
-        Board board = this.boardService.getBoard(bno);
         model.addAttribute("board", board);
         model.addAttribute("prevUrl", prevUrl); // 이전 페이지 url 뷰에 전달
         return "board/detail";
