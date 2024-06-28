@@ -618,6 +618,9 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - /service/MemberService.java에 메일 주소로 검색하는 getMemberByEmail() 메서드 추가
         - /service/MailService.java에 메일 전송 메서드 생성, 수정
             - UUID 생성해서 메일로 전송하는 기능 추가
+            
+            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp013.png?raw=true" width="730">
+
         - /entity/Reset.java 생성
         - /repository/ResetRepository.java 인터페이스 생성, findByUuid() 추가
         - /service/ResetService.java 생성
@@ -626,8 +629,6 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - /templates/member/newpassword.html 생성
         - /controller/MemberController.java, /member/reset-password Post 메서드 작성
         - /service/MemberService.java에 setMember() 메서드 추가
-
-            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp013.png?raw=true" width="730">
 
             <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/sp014.png?raw=true" width="730">
 
