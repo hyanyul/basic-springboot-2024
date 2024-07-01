@@ -743,20 +743,65 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
     6. 목록 표시
         - for, map() 함수 많이 사용
         - map() 사용 시 for문보다 짧게 구현 가능
+        - 각 child 요소마다 key 속성 필요(없으면 경고)
 
             <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/react001.png?raw=true" width="730">
-            
 
-- Spring Boot JPA 프로젝트 개발 계속
-    1. frontboard(React)
+    7. 이벤트 핸들링
+        - form + onSubmit, tag + onClick
+        - 이벤트 파라미터 전달
+        - 파라미터 필요해서 함수 뒤에 () 사용 시 이벤트 순서에 따라 리플레쉬 후 자동실행 됨
+        - onClick = {() => function()} 람다식으로 변경 필요
 
-    2. backboard(Rest API)
+            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/react002.png?raw=true" width="730">
+    
+    8. 컴포넌트 간 데이터 전달
+        - props 속성
+        - props.속성이름.key이름
 
-    3. 소셜 로그인 - 구글
+    9. 화면 업데이트
+        - useState : 앱 화면의 상태를 기억하고, 사용하기 위한 객체
+        - import { userState } from 'react'; 필수
+        - const [count, setCount] = useState(0);
+
+    10. Hooks
+        - use로 시작하는 함수를 Hooks라 호칭, State, Effect 외에는 잘 안씀
+        - useState : React에서 컴포넌트 상태를 추가, 보관
+        - useEffect : 컴포넌트에서 사이드 이펙트를 수행할 때 사용
+        - 기타 : useContext, useReducer, useCallback, useRef 등
+
+- 리액트 추가 내용
+    1. 리액트 관련 프레임워크
+        - Next.js - 풀스택 React 프레임워크
+        - Gatsby - 정적 사이트 React 프레임워크   
+        - React Native - Android, iOS 멀티플랫폼 모바일 프레임워크
+
+    2. npm으로 추가 라이브러리 설치
+        - > npm install react react-dom
+
+    3. VS Code 확장
+        - ES7 + React/Redux/React-Native 설치
+        - VSCode React Refactor : 리팩팅 도구 
+        - Import Cost : 라이브러리 비용 계산
+        - Simple React Snippets
+
+    4. 리액트 개발자 도구
+        - 크롬. 엣지 브라우저별로 따로 존재
+        - React Developer Tools 설치
+
+
+## 15일차
+- Spring Boot React 연동 프로젝트 개발 계속
+    1. 리액트 프로젝트 생성
+        - 터미널 /spring03으로 이동
+        - > npx create-react-app frontboard
+
+    2. 소셜 로그인 - 구글
         - https://console.cloud.google.com/ 구글 클라우드 콘솔
         - 프로젝트 생성
         - OAuth 동의화면 설정
         - 개발 계속
+
 
 ## 계속
 - Spring Boot JPA 프로젝트 개발 계속
