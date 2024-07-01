@@ -634,13 +634,123 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
 
 
 ## 14일차
+- 리액트 개요
+    - 서버 -> 백엔드
+    - 클라이언트 사이드 -> 프론트엔드
+    - 프론트엔드: html + css + js(html, jsp, aspx, php 등 확장자 다양)
+    - js만 가지고 프론트엔드 만들어보자 -> 리액트
+    - css는 있어야 함
+    - 페이스북이 자기 웹페이지 프론트를 좀 더 개선해보고자 개발 시작
+    - 리액트는 기본적으로 SPA(Single Page Application)을 목적으로 만들어짐
+    - Node.js 서버 사이드 js를 사용해서 서버를 동작시킴
+    - 패키지 매니저 종류: npm, chocolatey, yarn 등(본인이 필요한 거만 공부)
+
+- 리액트 개발 순서
+    1. Node.js 설치
+        - https://nodejs.org/en, Download Node.js(LTS) 클릭
+        - 설치 후 콘솔에서 node --version으로 확인. 현재 v20.15.0
+
+    2. 리액트 패키지 설치
+        - > npm uninstall -g create-react-app
+        - > npm install -g create-react-app
+
+    3. 리액트 프로젝트를 초기화
+        - VS Code에서 터미널 오픈
+        - npx create-react-app basic-app
+
+    4. 리액트 실행
+        - 콘솔에서 위에서 만든 프로젝트앱 이름까지 진입 basic-app()
+        - 웹브라우저 http://localhost:3000 서버 확인
+        - node가 3000 포트로 웹서버를 실행
+        - 웹서버가 실행된 상태에서 개발하는 것이 가장 좋음
+        - 모든 웹페이지는 index.html(jsp, php 등)이 가장 처음 화면, App.js가 메인 개발 부분
+    
+- 리액트 기본 구조 및 개발 방법
+    1. 깃헙 .gitignore에 react(node) 관련 설정 내용 추가
+    2. 깃헙 .gitignore 먼저 커밋하고 푸시
+
+    3. src/App.css, App.js, index.js 파일만
+    4. javascript이기 때문에 js 위주로 개발
+    5. App.js부터 개발 시작하면 됨
+    
+- 리액트 기초 공부
+    1. html 태그처럼 개발자가 새로운 요소(객체) 생성 가능
+        ```jsx
+        function CustomButton(){    // CustonButton 객체 생성
+        return (
+            <button>My Button</button>
+        );
+        }
+        ```
+    
+    2. /component/CustomButton.js 생성, 위 소스 옮김
+        - 같은 파일이 아닌 곳에 객체를 만들면
+        - 가져와 쓰기 위해서 export default 객체 이름; 필수
+
+    3. React 문법은 JSX. 일반 js와 조금 차이 있음
+        - className은 JSX에만 존재
+        - HTML에 있던 class는 JSX에서 className으로 변경
+        - 인라인으로 style 쓸 때 CSS 명칭 다름
+        - 대신, *.css 파일로 작업 시 기존 그대로 사용해도 무방
+        - JSX 문법에는 모든 요소는 상위 태그 하나에 속해야 함
+        - https://transform.tools/html-to-jsx 참조할 것
+    
+    4. 데이터 화면에 표시
+        - 변수 생성 시 const 많이 사용
+        - 변수 사용 시 중괄호({}) 사이에 입력
+        - CSS를 *.css 파일에 작성할 때는 html에서 사용할 때와 동일
+            - ex. border-radius: 50%;
+        - JSC에 사용할 때는 
+            - ex.borderRadius: '50%'
+        - 리액트에서 css 쓸 때는 *.css 파일로 작업할 것
+
+    5. 조건부 렌더링
+        ```jsx
+        function CustomButton(){
+            let isLoggedIn = true;  // 로그인 여부
+            let content;
+
+            if(isLoggedIn){
+                content = <button>Log Out</button>;
+            } else{
+                content = <button>Log In</button>;
+            }
+
+            return (
+                <>
+                    {content}
+                </>
+            );
+        } 
+        ```
+        - 또는 
+        ```jsx
+        function CustomButton(){
+            return (
+                <>
+                    {
+                        isLoggedIn ? (
+                            <button>Log Out</button>
+                        ) : (
+                            <button>Log In</button>
+                        )
+                    }
+                </>
+            );
+        } 
+        ```
+
+    6. 목록 표시
+        - for, map() 함수 많이 사용
+        - map() 사용 시 for문보다 짧게 구현 가능
+
+            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/react001.png?raw=true" width="730">
+            
+
 - Spring Boot JPA 프로젝트 개발 계속
     1. frontboard(React)
 
     2. backboard(Rest API)
-
-
-
 
     3. 소셜 로그인 - 구글
         - https://console.cloud.google.com/ 구글 클라우드 콘솔
