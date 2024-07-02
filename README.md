@@ -796,19 +796,41 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - 터미널 /spring03으로 이동
         - > npx create-react-app frontboard
 
-    2. 소셜 로그인 - 구글
-        - https://console.cloud.google.com/ 구글 클라우드 콘솔
-        - 프로젝트 생성
-        - OAuth 동의화면 설정
-        - 개발 계속
+    2. Spring Boot / React 같이 개발할 때
+        - Spring Boot 웹서버 실행
+        - React 프론트 웹서버 실행
 
 
-## 계속
-- Spring Boot JPA 프로젝트 개발 계속
-    1. 남은 것
-        - 8080 -> 80 서버
-        - http -> https 변경
+    3. 리액트 라이브러리 설치, npm
+        - 리액트용 Bootstrap 설치
+        - > npm install react-bootstrap bootstrap -> css 디자인
+        - **TIP npm audix fic --force는 절대 하지 말 것**
+        - > npm install axios - REST API 통신 라이브러리 -> 리액트 화면 네비게이션
+        - > npm install react-router-dom
+        - > npm install react-js-pagination -> 리액트 페이징 처리
 
+    4. frontboard 개발 시작
+        - App.js, logo.svg 삭제, react-router-dom으로 Routes, Route 사용
+        - index.js, reportWebVitals() 삭제
+        - index.js, <React.StrictMode> 삭제 또는 주석
+        - /src/layout/Header.js, Footer.js 생성
+        - /src/routes/Home.js, BoardList.js, QnaList.js, Login.js 생성
+        - App.js에 Route될 화면 추가
+        - Header.js에 react-router-com 추가, Link, useNavigate 사용
 
-    - 파일 업로드 - AWS S3 체크
-    - 로그인한 사용자 헤더에 표시
+    5. backboard Rest API 추가
+        - /restcontroller/RestBoardController.java 생성, BoardController에 있는 메서드 복사
+        - (문제) Spring Boot와 Rest API 간의 리턴 데이터 차이때문에 100% 호환 안됨
+        - (문제) Spring Boot에서 만든 Entity는 Board와 Reply 등의 OneToMany / ManyToOne의 관계가 JSON으로 변환할 때 문제 발생
+        - /Entity를 그대로 사용하지 말고, RestAPI에서는 다른 클래스 만들어야 함
+        - /dto/BoardDto.java 생성
+        - /dto/ReplyDto.java 생성
+        - /RestBoardController.java에 getList()를 Board Entity -> BoardDto로 변경
+        - /sercurity/SecurityConfig.java CORS 설정 추가
+
+    6. frontboard 개발 계속
+        - /BoardList.js axios 관련 RestAPI 호출 내용 추가
+        - 테이블 내용을 boardList.map() 10개 리스트 출력
+
+            <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/react003.png?raw=true" width="730">
+            

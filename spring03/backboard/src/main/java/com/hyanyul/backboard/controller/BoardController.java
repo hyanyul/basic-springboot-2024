@@ -36,8 +36,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Log4j2
 public class BoardController {
     private final BoardService boardService; // 중간 연결책
-    private final MemberService memberService;
-    private final CategoryService categoryService;
+    private final MemberService memberService;  // 사용자 정보
+    private final CategoryService categoryService;  // 카테고리 사용
 
     // // @RequestMapping("/list", method=RequestMethod.GET) // 아래와 동일 기능
     // @GetMapping("/list")
