@@ -833,4 +833,14 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - 테이블 내용을 boardList.map() 10개 리스트 출력
 
             <img src="https://github.com/hyanyul/basic-springboot-2024/blob/main/images/react003.png?raw=true" width="730">
-            
+
+
+## 16일차
+- Spring Boot React 연동 프로젝트 개발 계속
+    1. 상세 화면
+
+    2. 입력 화면
+
+    3. 페이징
+
+    4. 로그인
