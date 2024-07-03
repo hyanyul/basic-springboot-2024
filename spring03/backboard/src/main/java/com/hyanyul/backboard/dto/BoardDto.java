@@ -16,9 +16,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardDto {
+
+    private Long num;   // 게시글 번호
+
     private long bno;
 
-    private String title; 
+    private String title;   
 
     private String content;
 
