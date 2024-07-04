@@ -859,8 +859,23 @@ Java 빅데이터 개발자 과정 Spring Boot 학습 리포지토리
         - /routes/BoardDetail.js 생성
 
 ## 17일차
+- Spring Boot React 연동 프로젝트 개발 계속
+    0. npm -> node에서 만든 package manager
+        - yarn, brew(MacOS), chocolatey 등
+        - node, npm, npx 등 명령어 먼저 공부
+
     1. 로그인
+        - (Front) /layout/Header.js 로그인, 회원가입 버튼으로 변경
+        - Login.js 화면 수정
+        - (Back) RestMemberController.java 생성 login() Post 메서드 작성
+        - MemberService.java, getMemberByUsernameAndPassword() 메서드 작성
+        - Postman에서 테스트
+        - (Front) Login.js axios 부분 작성
+        - Home.js, localStorage 사용해서 로그인 정보 출력
+        - Header.js 로그인 버튼 -> 로그아웃
 
     2. 상세화면 완료
+        - (Back) RestBoardController.java detail() 리턴값 변경
+        - (Front) BoardDetail.js에서 axios로 가져오기
 
     3. 입력화면
